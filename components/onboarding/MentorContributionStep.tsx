@@ -77,13 +77,13 @@ export function MentorContributionStep({
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <div className="font-mono text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">
-          Mentor Onboarding // Step 02
+        <div className="inline-flex items-center gap-2 eyebrow-badge mb-2">
+          <span>Mentor Onboarding // Step 02</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
           How would you like to contribute?
         </h2>
-        <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-xl">
+        <p className="mt-2 text-sm text-[#424245] leading-relaxed max-w-xl">
           Choose your primary mentorship role to help us connect you with relevant student projects and research teams.
         </p>
       </div>
@@ -98,25 +98,25 @@ export function MentorContributionStep({
               key={opt.id}
               type="button"
               onClick={() => onSelectContribution(opt.id)}
-              className={`group relative flex items-start gap-3.5 rounded-xl p-4 text-left transition-all border active-press ${
+              className={`group relative flex items-start gap-3.5 rounded-2xl p-4 text-left transition-all border active-press ${
                 isSelected
-                  ? "bg-[#10172a] border-cyan-500 shadow-md ring-1 ring-cyan-500"
-                  : "bg-[#0d1322] border-white/10 hover:border-white/20 hover:bg-[#11192e]"
+                  ? "bg-cyan-50/70 border-[#0284c7] shadow-sm ring-1 ring-[#0284c7]"
+                  : "bg-[#f5f5f7]/60 border-black/[0.08] hover:border-black/[0.15] hover:bg-[#f5f5f7]"
               }`}
             >
               <div
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${
+                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border ${
                   isSelected
-                    ? "border-cyan-400 bg-cyan-950/80 text-cyan-300"
-                    : "border-white/10 bg-[#080c14] text-slate-400"
+                    ? "border-cyan-200 bg-white text-[#0284c7] shadow-sm"
+                    : "border-black/[0.08] bg-white text-[#6e6e73]"
                 }`}
               >
                 <Icon className="w-4.5 h-4.5" />
               </div>
 
               <div>
-                <h3 className="text-sm font-bold text-white">{opt.title}</h3>
-                <p className="mt-1 text-xs text-slate-400 leading-snug">
+                <h3 className="text-sm font-bold text-[#1d1d1f]">{opt.title}</h3>
+                <p className="mt-1 text-xs text-[#424245] leading-snug">
                   {opt.description}
                 </p>
               </div>
@@ -127,8 +127,8 @@ export function MentorContributionStep({
 
       {/* Custom Category Input if 'other' is selected */}
       {selectedContribution === "other" && (
-        <div className="rounded-xl border border-white/10 bg-[#080c14] p-4">
-          <label htmlFor="custom-category" className="block text-xs font-mono text-slate-300 mb-1.5">
+        <div className="rounded-2xl border border-black/[0.08] bg-[#f5f5f7] p-4">
+          <label htmlFor="custom-category" className="block text-xs font-mono text-[#424245] mb-1.5">
             Specify Your Mentorship / Advisory Capacity:
           </label>
           <input
@@ -137,7 +137,7 @@ export function MentorContributionStep({
             value={customCategory}
             onChange={(e) => onChangeCustomCategory(e.target.value)}
             placeholder="e.g. Patent Attorney / Intellectual Property Consultant"
-            className="w-full rounded-lg border border-white/10 bg-[#0d1322] px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:border-cyan-500 focus:outline-none"
+            className="w-full rounded-xl border border-black/[0.08] bg-white px-3.5 py-2.5 text-sm text-[#1d1d1f] placeholder-[#86868b] focus:border-[#0284c7] focus:outline-none"
           />
         </div>
       )}
@@ -148,7 +148,7 @@ export function MentorContributionStep({
           type="button"
           disabled={!selectedContribution}
           onClick={onContinue}
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-500 transition-all disabled:opacity-40 disabled:pointer-events-none active-press"
+          className="btn-primary px-6 py-3 text-sm gap-2 disabled:opacity-40 disabled:pointer-events-none"
         >
           <span>Continue to Mentor Profile</span>
           <ArrowRight className="w-4 h-4" />

@@ -29,7 +29,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#080c14] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="relative min-h-screen bg-grid text-[#1d1d1f] selection:bg-blue-100 selection:text-blue-800">
       {/* 01: Minimalist Editorial Navbar */}
       <Navbar onOpenContact={handleOpenOnboarding} />
 

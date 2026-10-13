@@ -77,38 +77,38 @@ export function ContactModal({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity duration-200"
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-200"
         aria-hidden="true"
       />
 
       {/* Modal Surface */}
-      <div className="relative w-full max-w-xl rounded-2xl border border-white/10 bg-slate-900/95 p-6 sm:p-8 shadow-2xl backdrop-blur-xl z-10 animate-fade-in text-slate-100">
+      <div className="relative w-full max-w-xl rounded-3xl border border-black/[0.08] bg-white p-6 sm:p-8 shadow-2xl z-10 modal-enter text-[#1d1d1f]">
         {/* Close Button */}
         <button
           onClick={onClose}
           type="button"
           aria-label="Close dialog"
-          className="absolute right-4 top-4 rounded-xl p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+          className="absolute right-4 top-4 rounded-full p-2 text-[#86868b] hover:bg-black/[0.05] hover:text-[#1d1d1f] transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
         >
           <X className="w-5 h-5" />
         </button>
 
         {submitted ? (
           <div className="py-8 text-center">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 shadow-glow-emerald">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200 text-[#059669] shadow-sm">
               <CheckCircle2 className="w-8 h-8 animate-pulse" />
             </div>
-            <h3 className="mt-6 text-2xl font-bold text-slate-100">
+            <h3 className="mt-6 text-2xl font-bold text-[#1d1d1f]">
               Your Journey Has Started!
             </h3>
-            <p className="mt-3 text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-              Thank you for reaching out, <span className="text-slate-200 font-semibold">{name || "Innovator"}</span>. An ASK INVENTORS technical mentor will connect with you within 24 hours to review your roadmap.
+            <p className="mt-3 text-sm text-[#424245] max-w-md mx-auto leading-relaxed">
+              Thank you for reaching out, <span className="text-[#1d1d1f] font-semibold">{name || "Innovator"}</span>. An ASK INVENTORS technical mentor will connect with you within 24 hours to review your roadmap.
             </p>
             <div className="mt-8">
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-glow-indigo hover:bg-indigo-500 transition-all active-press"
+                className="btn-primary gap-2"
               >
                 Back to ASK INVENTORS <ArrowRight className="w-4 h-4" />
               </button>
@@ -116,21 +116,21 @@ export function ContactModal({
           </div>
         ) : (
           <>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">
+            <div className="inline-flex items-center gap-2 eyebrow-badge mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Connect with ASK INVENTORS</span>
             </div>
-            <h2 id="modal-title" className="text-2xl font-bold text-slate-100">
+            <h2 id="modal-title" className="text-2xl font-bold text-[#1d1d1f]">
               Start Your Innovation Journey
             </h2>
-            <p className="mt-1 text-sm text-slate-400">
+            <p className="mt-1 text-sm text-[#424245]">
               Tell us about your project, research goal, or institutional partnership.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               {/* Persona Selector */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-2">
+                <label className="block text-xs font-medium text-[#424245] mb-2">
                   I am a:
                 </label>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -144,10 +144,10 @@ export function ContactModal({
                       type="button"
                       key={item.id}
                       onClick={() => setRole(item.id)}
-                      className={`rounded-xl px-3 py-2 text-xs font-medium border transition-all text-center ${
+                      className={`rounded-xl px-3 py-2 text-xs font-medium border transition-colors text-center active-press ${
                         role === item.id
-                          ? "border-indigo-500 bg-indigo-600/20 text-indigo-300 shadow-glow-indigo"
-                          : "border-slate-800 bg-slate-800/40 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                          ? "border-[#0071e3] bg-blue-50 text-[#0071e3] font-semibold"
+                          : "border-black/[0.08] bg-[#f5f5f7] text-[#424245] hover:text-[#1d1d1f] hover:bg-black/[0.04]"
                       }`}
                     >
                       {item.label}
@@ -158,14 +158,14 @@ export function ContactModal({
 
               {/* Focus Area */}
               <div>
-                <label htmlFor="topic-input" className="block text-xs font-medium text-slate-300 mb-1.5">
+                <label htmlFor="topic-input" className="block text-xs font-medium text-[#424245] mb-1.5">
                   Primary Focus / Goal
                 </label>
                 <select
                   id="topic-input"
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
-                  className="w-full rounded-xl border border-slate-800 bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className="w-full rounded-xl border border-black/[0.08] bg-[#f5f5f7] px-3.5 py-2.5 text-sm text-[#1d1d1f] focus:border-[#0071e3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0071e3]"
                 >
                   <option value="">Select an area of interest</option>
                   <option value="project-mentoring">Academic Project Mentoring & Guidance</option>
@@ -181,7 +181,7 @@ export function ContactModal({
               {/* Name & Email */}
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name-input" className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label htmlFor="name-input" className="block text-xs font-medium text-[#424245] mb-1.5">
                     Your Name *
                   </label>
                   <input
@@ -191,11 +191,11 @@ export function ContactModal({
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Dr. / Prof. / Jane Doe"
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950/60 px-3.5 py-2 text-sm text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    className="w-full rounded-xl border border-black/[0.08] bg-[#f5f5f7] px-3.5 py-2 text-sm text-[#1d1d1f] placeholder-[#86868b] focus:border-[#0071e3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0071e3]"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email-input" className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label htmlFor="email-input" className="block text-xs font-medium text-[#424245] mb-1.5">
                     Email Address *
                   </label>
                   <input
@@ -205,14 +205,14 @@ export function ContactModal({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@college.edu or email@domain.com"
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950/60 px-3.5 py-2 text-sm text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    className="w-full rounded-xl border border-black/[0.08] bg-[#f5f5f7] px-3.5 py-2 text-sm text-[#1d1d1f] placeholder-[#86868b] focus:border-[#0071e3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0071e3]"
                   />
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message-input" className="block text-xs font-medium text-slate-300 mb-1.5">
+                <label htmlFor="message-input" className="block text-xs font-medium text-[#424245] mb-1.5">
                   Brief Project / Idea Overview (Optional)
                 </label>
                 <textarea
@@ -221,7 +221,7 @@ export function ContactModal({
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Share a brief overview of what you want to build or achieve..."
-                  className="w-full rounded-xl border border-slate-800 bg-slate-950/60 px-3.5 py-2 text-sm text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 resize-none"
+                  className="w-full rounded-xl border border-black/[0.08] bg-[#f5f5f7] px-3.5 py-2 text-sm text-[#1d1d1f] placeholder-[#86868b] focus:border-[#0071e3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0071e3] resize-none"
                 />
               </div>
 
@@ -230,7 +230,7 @@ export function ContactModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 px-5 py-3 text-sm font-semibold text-white shadow-glow-indigo hover:from-indigo-500 hover:to-indigo-400 transition-all disabled:opacity-50 active-press"
+                  className="w-full btn-primary"
                 >
                   {loading ? (
                     <span>Submitting...</span>
@@ -243,7 +243,7 @@ export function ContactModal({
                 </button>
               </div>
 
-              <div className="text-center text-[11px] text-slate-500">
+              <div className="text-center text-[11px] text-[#86868b]">
                 🔒 Your ideas and submissions are protected under strict confidentiality and IP privacy standards.
               </div>
             </form>

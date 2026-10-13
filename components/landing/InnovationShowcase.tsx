@@ -100,27 +100,27 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
       : projects.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="showcase" className="relative py-20 md:py-32 overflow-hidden bg-slate-950/40">
+    <section id="showcase" className="relative py-6 md:py-10 scroll-mt-24 overflow-hidden">
       {/* Background ambient lighting */}
       <div
-        className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-indigo-600/10 blur-[130px] rounded-full"
+        className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-blue-500/5 blur-[130px] rounded-full"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-950/40 px-3.5 py-1 text-xs font-semibold text-indigo-300 backdrop-blur-md mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 eyebrow-badge mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>Showcase & Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1d1d1f] leading-tight">
             <span>Built with </span>
-            <span className="bg-gradient-to-r from-indigo-300 via-indigo-100 to-cyan-300 bg-clip-text text-transparent">
+            <span className="text-highlight">
               ASK INVENTORS.
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#424245] leading-relaxed">
             Explore verified student capstones, published research architectures, working hardware prototypes, and industry deployments.
           </p>
         </div>
@@ -132,10 +132,10 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
               type="button"
-              className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold border transition-all active-press ${
+              className={`rounded-full px-4 py-2 text-xs sm:text-sm font-semibold border transition-all active-press ${
                 selectedCategory === cat.id
-                  ? "bg-indigo-600 border-indigo-400 text-white shadow-glow-indigo"
-                  : "bg-slate-900/60 border-white/5 text-slate-400 hover:border-white/15 hover:text-slate-200"
+                  ? "bg-[#0071e3] border-[#0071e3] text-white shadow-sm"
+                  : "bg-white border-black/[0.08] text-[#424245] hover:text-[#1d1d1f] hover:bg-black/[0.02]"
               }`}
             >
               {cat.label}
@@ -148,21 +148,21 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
           {filtered.map((proj) => (
             <div
               key={proj.id}
-              className="glass-panel group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/80 shadow-glass reflection-top"
+              className="glass-card group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300"
             >
               <div>
                 {/* Project Header: Type & Impact Badge */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-[11px] font-mono font-bold tracking-wider text-indigo-400">
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#0071e3]">
                     {proj.type}
                   </span>
-                  <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2.5 py-0.5 rounded-full shrink-0">
+                  <span className="text-[11px] font-semibold text-[#059669] bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full shrink-0">
                     {proj.impactBadge}
                   </span>
                 </div>
 
                 {/* Project Name */}
-                <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug">
+                <h3 className="text-lg font-bold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors leading-snug">
                   {proj.name}
                 </h3>
 
@@ -171,7 +171,7 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
                   {proj.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-slate-950/60 border border-white/5 px-2 py-0.5 text-[11px] font-mono text-slate-300"
+                      className="rounded-lg bg-[#f5f5f7] border border-black/[0.06] px-2 py-0.5 text-[11px] font-mono text-[#424245]"
                     >
                       {tech}
                     </span>
@@ -179,22 +179,22 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
                 </div>
 
                 {/* Outcome */}
-                <div className="mt-5 rounded-xl bg-slate-950/50 p-3 border border-white/5">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-cyan-400 mb-1">
+                <div className="mt-5 rounded-2xl bg-[#f5f5f7] p-3.5 border border-black/[0.06]">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3] mb-1">
                     Verified Outcome
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#424245] leading-relaxed">
                     {proj.outcome}
                   </p>
                 </div>
               </div>
 
               {/* Action Button */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-black/[0.06] flex items-center justify-between">
                 <button
                   onClick={() => setActiveProject(proj)}
                   type="button"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-300 hover:text-indigo-200 transition-colors active-press"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0071e3] hover:text-[#0077ed] transition-colors active-press"
                 >
                   <span>Project Deep Dive</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -203,7 +203,7 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
                 <button
                   onClick={() => onOpenContact("student", `showcase-${proj.id}`)}
                   type="button"
-                  className="text-xs font-medium text-slate-400 hover:text-white"
+                  className="text-xs font-medium text-[#6e6e73] hover:text-[#1d1d1f]"
                 >
                   Build Similar
                 </button>
@@ -213,11 +213,11 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
         </div>
 
         {/* Explore All CTA */}
-        <div className="mt-14 text-center">
+        <div className="mt-6 text-center">
           <button
             onClick={() => onOpenContact("student", "explore-all-showcase")}
             type="button"
-            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-7 py-3.5 text-sm font-semibold text-white shadow-glow-indigo hover:bg-indigo-500 transition-all active-press border border-indigo-400/30"
+            className="btn-primary"
           >
             <span>Explore Innovation & Submit Proposal</span>
             <ArrowRight className="w-4 h-4" />
@@ -234,46 +234,46 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
           >
             <div
               onClick={() => setActiveProject(null)}
-              className="fixed inset-0 bg-slate-950/80 backdrop-blur-md"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm"
               aria-hidden="true"
             />
-            <div className="relative w-full max-w-lg rounded-2xl border border-white/10 bg-slate-900/95 p-6 sm:p-8 shadow-2xl backdrop-blur-xl z-10 animate-fade-in text-slate-100">
+            <div className="relative w-full max-w-lg rounded-3xl border border-black/[0.08] bg-white p-6 sm:p-8 shadow-2xl z-10 modal-enter text-[#1d1d1f]">
               <button
                 onClick={() => setActiveProject(null)}
                 type="button"
                 aria-label="Close dialog"
-                className="absolute right-4 top-4 rounded-xl p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition-colors"
+                className="absolute right-4 top-4 rounded-full p-2 text-[#86868b] hover:bg-black/[0.05] hover:text-[#1d1d1f] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-mono font-bold text-indigo-400">
+                <span className="text-xs font-mono font-bold text-[#0071e3]">
                   {activeProject.type}
                 </span>
-                <span className="text-slate-500">•</span>
-                <span className="text-xs font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                <span className="text-[#aeaeb2]">•</span>
+                <span className="text-xs font-semibold text-[#059669] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
                   {activeProject.impactBadge}
                 </span>
               </div>
 
-              <h3 id="project-modal-title" className="text-2xl font-bold text-white">
+              <h3 id="project-modal-title" className="text-2xl font-bold text-[#1d1d1f]">
                 {activeProject.name}
               </h3>
 
-              <p className="mt-4 text-sm text-slate-300 leading-relaxed">
+              <p className="mt-4 text-sm text-[#424245] leading-relaxed">
                 {activeProject.details}
               </p>
 
               <div className="mt-5">
-                <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                <div className="text-xs font-semibold uppercase tracking-wider text-[#86868b] mb-2">
                   Technology Stack
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {activeProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-lg bg-slate-950/60 border border-white/5 px-2.5 py-1 text-xs font-mono text-cyan-300"
+                      className="rounded-lg bg-[#f5f5f7] border border-black/[0.06] px-2.5 py-1 text-xs font-mono text-[#1d1d1f]"
                     >
                       {tech}
                     </span>
@@ -281,20 +281,20 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
                 </div>
               </div>
 
-              <div className="mt-5 rounded-xl bg-indigo-950/30 border border-indigo-500/20 p-3.5">
-                <div className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-1">
+              <div className="mt-5 rounded-2xl bg-emerald-50/60 border border-emerald-200/80 p-3.5">
+                <div className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-1">
                   Outcome & Verification
                 </div>
-                <div className="text-xs sm:text-sm text-slate-200">
+                <div className="text-xs sm:text-sm text-[#1d1d1f]">
                   {activeProject.outcome}
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between">
+              <div className="mt-8 pt-4 border-t border-black/[0.06] flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => setActiveProject(null)}
-                  className="rounded-xl px-4 py-2 text-xs font-medium text-slate-400 hover:text-slate-200"
+                  className="btn-ghost text-xs px-4 py-2"
                 >
                   Close
                 </button>
@@ -305,7 +305,7 @@ export function InnovationShowcase({ onOpenContact }: ShowcaseProps) {
                     setActiveProject(null);
                     onOpenContact("student", `replicate-${id}`);
                   }}
-                  className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-xs font-semibold text-white shadow-glow-indigo hover:bg-indigo-500 transition-all active-press"
+                  className="btn-primary text-xs px-5 py-2.5"
                 >
                   <span>Build With This Tech</span>
                   <ArrowRight className="w-3.5 h-3.5" />

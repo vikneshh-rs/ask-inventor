@@ -19,14 +19,14 @@ export function RoleSelectionStep({
     <div className="space-y-6">
       {/* Editorial Header */}
       <div>
-        <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-indigo-400 mb-2">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 eyebrow-badge mb-2">
+          <Sparkles className="w-3.5 h-3.5" />
           <span>Step 01 // Identification</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
           Build your journey with ASK INVENTORS.
         </h2>
-        <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-xl">
+        <p className="mt-2 text-sm text-[#424245] leading-relaxed max-w-xl">
           Tell us who you are so we can create the right experience for you.
         </p>
       </div>
@@ -37,42 +37,42 @@ export function RoleSelectionStep({
         <button
           type="button"
           onClick={() => onSelectRole("student")}
-          className={`group relative flex flex-col justify-between rounded-xl p-5 sm:p-6 text-left transition-all border active-press ${
+          className={`group relative flex flex-col justify-between rounded-2xl p-5 sm:p-6 text-left transition-all border active-press ${
             selectedRole === "student"
-              ? "bg-[#10172a] border-indigo-500 shadow-lg shadow-indigo-950/60 ring-1 ring-indigo-500"
-              : "bg-[#0d1322] border-white/10 hover:border-white/20 hover:bg-[#11192e]"
+              ? "bg-blue-50/70 border-[#0071e3] shadow-md ring-1 ring-[#0071e3]"
+              : "bg-[#f5f5f7]/60 border-black/[0.08] hover:border-black/[0.15] hover:bg-[#f5f5f7]"
           }`}
         >
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-[11px] font-bold text-slate-500 group-hover:text-indigo-400 transition-colors">
+              <span className="font-mono text-[11px] font-bold text-[#86868b] group-hover:text-[#0071e3] transition-colors">
                 ROLE // 01
               </span>
               <div
-                className={`flex h-10 w-10 items-center justify-center rounded-lg border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
                   selectedRole === "student"
-                    ? "border-indigo-400 bg-indigo-950 text-indigo-300"
-                    : "border-white/10 bg-[#080c14] text-slate-400"
+                    ? "border-blue-200 bg-white text-[#0071e3] shadow-sm"
+                    : "border-black/[0.08] bg-white text-[#6e6e73]"
                 }`}
               >
                 <GraduationCap className="w-5 h-5" />
               </div>
             </div>
 
-            <h3 className="text-xl font-extrabold text-white">STUDENT</h3>
-            <div className="mt-1 text-xs font-bold text-indigo-300">
+            <h3 className="text-xl font-extrabold text-[#1d1d1f]">STUDENT</h3>
+            <div className="mt-1 text-xs font-bold text-[#0071e3]">
               Learn. Build. Research. Grow.
             </div>
 
-            <p className="mt-3 text-xs text-slate-400 leading-relaxed">
+            <p className="mt-3 text-xs text-[#424245] leading-relaxed">
               For students working on projects, developing skills, pursuing research, building prototypes, or preparing for their careers.
             </p>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold">
+          <div className="mt-6 pt-4 border-t border-black/[0.06] flex items-center justify-between text-xs font-semibold">
             <span
               className={
-                selectedRole === "student" ? "text-indigo-300" : "text-slate-500"
+                selectedRole === "student" ? "text-[#0071e3]" : "text-[#86868b]"
               }
             >
               {selectedRole === "student" ? "Selected Role" : "Select Student"}
@@ -80,8 +80,8 @@ export function RoleSelectionStep({
             <ArrowRight
               className={`w-4 h-4 transition-transform ${
                 selectedRole === "student"
-                  ? "text-indigo-400 translate-x-1"
-                  : "text-slate-600 group-hover:text-slate-400"
+                  ? "text-[#0071e3] translate-x-1"
+                  : "text-[#aeaeb2] group-hover:text-[#6e6e73]"
               }`}
             />
           </div>
@@ -91,42 +91,42 @@ export function RoleSelectionStep({
         <button
           type="button"
           onClick={() => onSelectRole("mentor")}
-          className={`group relative flex flex-col justify-between rounded-xl p-5 sm:p-6 text-left transition-all border active-press ${
+          className={`group relative flex flex-col justify-between rounded-2xl p-5 sm:p-6 text-left transition-all border active-press ${
             selectedRole === "mentor"
-              ? "bg-[#10172a] border-cyan-500 shadow-lg shadow-cyan-950/60 ring-1 ring-cyan-500"
-              : "bg-[#0d1322] border-white/10 hover:border-white/20 hover:bg-[#11192e]"
+              ? "bg-cyan-50/70 border-[#0284c7] shadow-md ring-1 ring-[#0284c7]"
+              : "bg-[#f5f5f7]/60 border-black/[0.08] hover:border-black/[0.15] hover:bg-[#f5f5f7]"
           }`}
         >
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="font-mono text-[11px] font-bold text-slate-500 group-hover:text-cyan-400 transition-colors">
+              <span className="font-mono text-[11px] font-bold text-[#86868b] group-hover:text-[#0284c7] transition-colors">
                 ROLE // 02
               </span>
               <div
-                className={`flex h-10 w-10 items-center justify-center rounded-lg border ${
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
                   selectedRole === "mentor"
-                    ? "border-cyan-400 bg-cyan-950 text-cyan-300"
-                    : "border-white/10 bg-[#080c14] text-slate-400"
+                    ? "border-cyan-200 bg-white text-[#0284c7] shadow-sm"
+                    : "border-black/[0.08] bg-white text-[#6e6e73]"
                 }`}
               >
                 <Users className="w-5 h-5" />
               </div>
             </div>
 
-            <h3 className="text-xl font-extrabold text-white">MENTOR</h3>
-            <div className="mt-1 text-xs font-bold text-cyan-300">
+            <h3 className="text-xl font-extrabold text-[#1d1d1f]">MENTOR</h3>
+            <div className="mt-1 text-xs font-bold text-[#0284c7]">
               Guide. Share. Build impact.
             </div>
 
-            <p className="mt-3 text-xs text-slate-400 leading-relaxed">
+            <p className="mt-3 text-xs text-[#424245] leading-relaxed">
               For faculty, researchers, industry professionals, technical experts, designers, and experienced professionals who want to mentor students.
             </p>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold">
+          <div className="mt-6 pt-4 border-t border-black/[0.06] flex items-center justify-between text-xs font-semibold">
             <span
               className={
-                selectedRole === "mentor" ? "text-cyan-300" : "text-slate-500"
+                selectedRole === "mentor" ? "text-[#0284c7]" : "text-[#86868b]"
               }
             >
               {selectedRole === "mentor" ? "Selected Role" : "Select Mentor"}
@@ -134,8 +134,8 @@ export function RoleSelectionStep({
             <ArrowRight
               className={`w-4 h-4 transition-transform ${
                 selectedRole === "mentor"
-                  ? "text-cyan-400 translate-x-1"
-                  : "text-slate-600 group-hover:text-slate-400"
+                  ? "text-[#0284c7] translate-x-1"
+                  : "text-[#aeaeb2] group-hover:text-[#6e6e73]"
               }`}
             />
           </div>
@@ -148,7 +148,7 @@ export function RoleSelectionStep({
           type="button"
           disabled={!selectedRole}
           onClick={onContinue}
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-500 transition-all disabled:opacity-40 disabled:pointer-events-none active-press"
+          className="btn-primary px-6 py-3 text-sm gap-2 disabled:opacity-40 disabled:pointer-events-none"
         >
           <span>Continue to Stage Profile</span>
           <ArrowRight className="w-4 h-4" />

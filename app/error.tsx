@@ -16,17 +16,17 @@ export default function ErrorBoundary({
   }, [error]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-amber-500/30 bg-amber-950/40 text-amber-400">
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center bg-[#fbfbfd]">
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-amber-200 bg-amber-50 text-amber-600 shadow-sm">
         <AlertTriangle className="h-7 w-7" />
       </div>
-      <h1 className="mt-6 text-3xl font-bold text-slate-100">Something went wrong</h1>
-      <p className="mt-2 max-w-md text-sm text-slate-400">
+      <h1 className="mt-6 text-3xl font-bold tracking-tight text-[#1d1d1f]">Something went wrong</h1>
+      <p className="mt-2 max-w-md text-sm text-[#424245]">
         {error.message || "An unexpected error occurred while processing your request."}
       </p>
       <button
         onClick={() => reset()}
-        className="mt-6 inline-flex items-center gap-2 rounded-xl border border-indigo-500/30 bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+        className="mt-6 btn-primary"
       >
         <RefreshCw className="h-4 w-4" /> Try Again
       </button>

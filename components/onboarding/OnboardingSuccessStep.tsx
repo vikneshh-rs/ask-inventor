@@ -22,19 +22,19 @@ export function OnboardingSuccessStep({
   return (
     <div className="py-4 space-y-6 text-center">
       {/* Success Badge */}
-      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 shadow-lg shadow-emerald-950/50">
+      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 border border-emerald-200 text-[#059669] shadow-sm">
         <CheckCircle2 className="w-8 h-8 animate-pulse" />
       </div>
 
       <div>
-        <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-widest text-indigo-400 mb-2">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-1.5 eyebrow-badge mb-2">
+          <Sparkles className="w-3.5 h-3.5" />
           <span>Profile Initialized // 2026</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
           Welcome to ASK INVENTORS, {profileName || "Innovator"}!
         </h2>
-        <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-md mx-auto">
+        <p className="mt-2 text-sm text-[#424245] leading-relaxed max-w-md mx-auto">
           {isStudent
             ? "Your Student Innovator profile is active. You can now access guided project blueprints, hardware fabrication tracks, and 1-on-1 technical mentors."
             : "Your Mentor & Advisor profile is active. You are now connected to student project teams, research publications, and prototype initiatives."}
@@ -42,54 +42,54 @@ export function OnboardingSuccessStep({
       </div>
 
       {/* Structured Profile Summary Card */}
-      <div className="rounded-xl border border-white/10 bg-[#080c14] p-5 text-left max-w-lg mx-auto space-y-3 font-mono text-xs">
-        <div className="flex items-center justify-between pb-2 border-b border-white/5">
-          <span className="text-slate-500 uppercase">Ecosystem Role</span>
-          <span className="font-bold text-indigo-300">
+      <div className="rounded-2xl border border-black/[0.08] bg-[#f5f5f7] p-5 text-left max-w-lg mx-auto space-y-3 font-mono text-xs text-[#1d1d1f]">
+        <div className="flex items-center justify-between pb-2 border-b border-black/[0.06]">
+          <span className="text-[#86868b] uppercase">Ecosystem Role</span>
+          <span className="font-bold text-[#0071e3]">
             {isStudent ? "STUDENT INNOVATOR" : "MENTOR & ADVISOR"}
           </span>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-slate-500 flex items-center gap-1.5">
-            <User className="w-3.5 h-3.5 text-slate-400" />
+          <span className="text-[#86868b] flex items-center gap-1.5">
+            <User className="w-3.5 h-3.5 text-[#86868b]" />
             <span>Name</span>
           </span>
-          <span className="text-slate-200">{profileName || "N/A"}</span>
+          <span className="text-[#1d1d1f] font-semibold">{profileName || "N/A"}</span>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-slate-500 flex items-center gap-1.5">
-            <Building className="w-3.5 h-3.5 text-slate-400" />
+          <span className="text-[#86868b] flex items-center gap-1.5">
+            <Building className="w-3.5 h-3.5 text-[#86868b]" />
             <span>{isStudent ? "Institution" : "Organization"}</span>
           </span>
-          <span className="text-slate-200 line-clamp-1">{organization || "N/A"}</span>
+          <span className="text-[#1d1d1f] line-clamp-1">{organization || "N/A"}</span>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-slate-500 flex items-center gap-1.5">
-            <BookOpen className="w-3.5 h-3.5 text-slate-400" />
+          <span className="text-[#86868b] flex items-center gap-1.5">
+            <BookOpen className="w-3.5 h-3.5 text-[#86868b]" />
             <span>{isStudent ? "Academic Stage" : "Designation"}</span>
           </span>
-          <span className="text-slate-200">{stageOrTitle || "N/A"}</span>
+          <span className="text-[#1d1d1f]">{stageOrTitle || "N/A"}</span>
         </div>
 
         {tags && tags.length > 0 && (
-          <div className="pt-2 border-t border-white/5">
-            <div className="text-[10px] text-slate-500 uppercase mb-1.5">
+          <div className="pt-2 border-t border-black/[0.06]">
+            <div className="text-[10px] text-[#86868b] uppercase mb-1.5">
               Configured Focus Tracks
             </div>
             <div className="flex flex-wrap gap-1.5">
               {tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded border border-white/10 bg-[#0d1322] px-2 py-0.5 text-[10px] text-slate-300"
+                  className="rounded-lg border border-black/[0.08] bg-white px-2 py-0.5 text-[10px] text-[#424245]"
                 >
                   {tag}
                 </span>
               ))}
               {tags.length > 4 && (
-                <span className="text-[10px] text-slate-500 self-center">
+                <span className="text-[10px] text-[#86868b] self-center">
                   +{tags.length - 4} more
                 </span>
               )}
@@ -103,7 +103,7 @@ export function OnboardingSuccessStep({
         <button
           type="button"
           onClick={onFinish}
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-7 py-3 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors active-press shadow-lg shadow-indigo-950/50"
+          className="btn-primary px-7 py-3 text-sm gap-2"
         >
           <span>Explore ASK INVENTORS Platform</span>
           <ArrowRight className="w-4 h-4" />

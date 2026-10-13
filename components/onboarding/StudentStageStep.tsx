@@ -52,13 +52,13 @@ export function StudentStageStep({
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <div className="font-mono text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">
-          Student Onboarding // Step 02
+        <div className="inline-flex items-center gap-2 eyebrow-badge mb-2">
+          <span>Student Onboarding // Step 02</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">
           What stage are you at?
         </h2>
-        <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-xl">
+        <p className="mt-2 text-sm text-[#424245] leading-relaxed max-w-xl">
           Select your current academic program to calibrate your project, mentorship, and career roadmap.
         </p>
       </div>
@@ -73,45 +73,45 @@ export function StudentStageStep({
               key={stage.id}
               type="button"
               onClick={() => onSelectStage(stage.id)}
-              className={`group relative flex flex-col justify-between rounded-xl p-5 text-left transition-all border active-press ${
+              className={`group relative flex flex-col justify-between rounded-2xl p-5 text-left transition-all border active-press ${
                 isSelected
-                  ? "bg-[#10172a] border-indigo-500 shadow-md ring-1 ring-indigo-500"
-                  : "bg-[#0d1322] border-white/10 hover:border-white/20 hover:bg-[#11192e]"
+                  ? "bg-blue-50/70 border-[#0071e3] shadow-sm ring-1 ring-[#0071e3]"
+                  : "bg-[#f5f5f7]/60 border-black/[0.08] hover:border-black/[0.15] hover:bg-[#f5f5f7]"
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] font-bold text-slate-500">
+                  <span className="font-mono text-[10px] font-bold text-[#86868b]">
                     {stage.code}
                   </span>
                   <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-lg border ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-xl border ${
                       isSelected
-                        ? "border-indigo-400 bg-indigo-950/80 text-indigo-300"
-                        : "border-white/10 bg-[#080c14] text-slate-400"
+                        ? "border-blue-200 bg-white text-[#0071e3] shadow-sm"
+                        : "border-black/[0.08] bg-white text-[#6e6e73]"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h3 className="text-base font-bold text-white">{stage.title}</h3>
-                <div className="mt-1 font-mono text-[11px] text-indigo-300">
+                <h3 className="text-base font-bold text-[#1d1d1f]">{stage.title}</h3>
+                <div className="mt-1 font-mono text-[11px] text-[#0071e3] font-medium">
                   {stage.degrees}
                 </div>
 
-                <p className="mt-2.5 text-xs text-slate-400 leading-relaxed">
+                <p className="mt-2.5 text-xs text-[#424245] leading-relaxed">
                   {stage.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-semibold">
-                <span className={isSelected ? "text-indigo-300" : "text-slate-500"}>
+              <div className="mt-4 pt-3 border-t border-black/[0.06] flex items-center justify-between text-[11px] font-semibold">
+                <span className={isSelected ? "text-[#0071e3]" : "text-[#86868b]"}>
                   {isSelected ? "Selected Stage" : "Select Stage"}
                 </span>
                 <ArrowRight
                   className={`w-3.5 h-3.5 ${
-                    isSelected ? "text-indigo-400" : "text-slate-600"
+                    isSelected ? "text-[#0071e3]" : "text-[#aeaeb2] group-hover:text-[#6e6e73]"
                   }`}
                 />
               </div>
@@ -126,7 +126,7 @@ export function StudentStageStep({
           type="button"
           disabled={!selectedStage}
           onClick={onContinue}
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-500 transition-all disabled:opacity-40 disabled:pointer-events-none active-press"
+          className="btn-primary px-6 py-3 text-sm gap-2 disabled:opacity-40 disabled:pointer-events-none"
         >
           <span>Continue to Academic Profile</span>
           <ArrowRight className="w-4 h-4" />

@@ -29,7 +29,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "7 min read",
       date: "Spring 2026",
       tag: "Intellectual Property",
-      color: "text-blue-400 bg-blue-950/40 border-blue-500/30",
+      color: "text-[#0071e3] bg-blue-50 border-blue-200",
     },
     {
       id: "res-2",
@@ -40,7 +40,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "12 min read",
       date: "Spring 2026",
       tag: "Academic Research",
-      color: "text-purple-400 bg-purple-950/40 border-purple-500/30",
+      color: "text-[#7c3aed] bg-purple-50 border-purple-200",
     },
     {
       id: "res-3",
@@ -51,7 +51,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "15 min read",
       date: "Updated Weekly",
       tag: "Embedded AI",
-      color: "text-cyan-400 bg-cyan-950/40 border-cyan-500/30",
+      color: "text-[#0284c7] bg-cyan-50 border-cyan-200",
     },
     {
       id: "res-4",
@@ -62,7 +62,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "Live Workshop",
       date: "Next Cohort: Oct 2026",
       tag: "Hardware Engineering",
-      color: "text-emerald-400 bg-emerald-950/40 border-emerald-500/30",
+      color: "text-[#059669] bg-emerald-50 border-emerald-200",
     },
     {
       id: "res-5",
@@ -73,7 +73,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "Grant Roadmap",
       date: "Open Applications",
       tag: "Seed Funding",
-      color: "text-amber-400 bg-amber-950/40 border-amber-500/30",
+      color: "text-[#d97706] bg-amber-50 border-amber-200",
     },
     {
       id: "res-6",
@@ -84,7 +84,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       readTime: "6 min read",
       date: "Spring 2026",
       tag: "Career Acceleration",
-      color: "text-rose-400 bg-rose-950/40 border-rose-500/30",
+      color: "text-indigo-600 bg-indigo-50 border-indigo-200",
     },
   ];
 
@@ -94,27 +94,27 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
       : resources.filter((item) => item.category === activeTab);
 
   return (
-    <section id="resources" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="resources" className="relative py-6 md:py-10 scroll-mt-24 overflow-hidden">
       {/* Dynamic Background Glow */}
       <div
-        className="pointer-events-none absolute bottom-1/3 left-1/4 w-[600px] h-[450px] bg-purple-600/10 blur-[130px] rounded-full"
+        className="pointer-events-none absolute bottom-1/3 left-1/4 w-[600px] h-[450px] bg-blue-500/5 blur-[130px] rounded-full"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-950/40 px-3.5 py-1 text-xs font-semibold text-indigo-300 backdrop-blur-md mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 eyebrow-badge mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>Knowledge & Open Intelligence</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1d1d1f] leading-tight">
             <span>Learn. Build. </span>
-            <span className="bg-gradient-to-r from-indigo-300 via-indigo-100 to-cyan-300 bg-clip-text text-transparent">
+            <span className="text-highlight">
               Research. Connect.
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#424245] leading-relaxed">
             ASK INVENTORS is more than a service — it is an open innovation hub providing open research playbooks, hands-on engineering tutorials, and fellowship opportunities.
           </p>
         </div>
@@ -131,8 +131,8 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
                 type="button"
                 className={`flex items-center gap-2 rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold border transition-all active-press ${
                   isSelected
-                    ? "bg-indigo-600 border-indigo-400 text-white shadow-glow-indigo"
-                    : "bg-slate-900/60 border-white/5 text-slate-400 hover:border-white/15 hover:text-slate-200"
+                    ? "bg-[#0071e3] border-[#0071e3] text-white shadow-sm"
+                    : "bg-[#f5f5f7] border-black/[0.08] text-[#424245] hover:border-black/[0.15] hover:text-[#1d1d1f]"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -147,7 +147,7 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
           {filtered.map((item) => (
             <article
               key={item.id}
-              className="glass-panel group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/80 shadow-glass reflection-top"
+              className="glass-card group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 stagger-item"
             >
               <div>
                 {/* Meta Header */}
@@ -157,33 +157,33 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
                   >
                     {item.categoryLabel}
                   </span>
-                  <span className="text-[11px] font-medium text-slate-400">
+                  <span className="text-[11px] font-medium text-[#86868b]">
                     {item.readTime}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug">
+                <h3 className="text-lg font-bold text-[#1d1d1f] leading-snug">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="mt-3 text-xs sm:text-sm text-[#424245] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
 
               {/* Footer */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                  <Tag className="w-3.5 h-3.5 text-slate-400" />
+              <div className="mt-6 pt-4 border-t border-black/[0.06] flex items-center justify-between">
+                <div className="flex items-center gap-1.5 text-xs text-[#86868b]">
+                  <Tag className="w-3.5 h-3.5 text-[#86868b]" />
                   <span>{item.tag}</span>
                 </div>
 
                 <button
                   onClick={() => onOpenContact("student", `resource-${item.id}`)}
                   type="button"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-300 hover:text-indigo-200 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#0071e3] hover:text-[#0077ed] transition-colors"
                 >
                   <span>Access Guide</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -194,19 +194,19 @@ export function Knowledge({ onOpenContact }: KnowledgeProps) {
         </div>
 
         {/* Community & Workshop Participation Banner */}
-        <div className="mt-14 rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/40 via-slate-900/80 to-purple-950/40 p-6 sm:p-8 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-8 rounded-3xl border border-black/[0.08] bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl text-center md:text-left">
-            <h4 className="text-xl sm:text-2xl font-bold text-white">
+            <h4 className="text-xl sm:text-2xl font-bold text-[#1d1d1f]">
               Want to host a hands-on workshop at your college?
             </h4>
-            <p className="mt-1.5 text-sm text-slate-300">
+            <p className="mt-1.5 text-sm text-[#424245]">
               We conduct 2-day hands-on bootcamps in Embedded AI, IoT Prototypes, and Patent Formulation for student chapters and IEEE societies.
             </p>
           </div>
           <button
             onClick={() => onOpenContact("college", "workshop-request")}
             type="button"
-            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-xs sm:text-sm font-semibold text-white shadow-glow-indigo hover:bg-indigo-500 transition-all active-press shrink-0"
+            className="btn-primary px-6 py-3 text-xs sm:text-sm shrink-0"
           >
             <span>Request College Bootcamp</span>
             <ArrowRight className="w-4 h-4" />

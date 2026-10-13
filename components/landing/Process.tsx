@@ -27,8 +27,8 @@ export function Process({ onOpenContact }: ProcessProps) {
       desc: "Initial scoping session with experienced domain mentors. We dissect syllabus guidelines, patent opportunities, feasibility constraints, and define the project blueprint.",
       icon: Search,
       milestone: "Architecture & Scope Finalized",
-      color: "from-blue-500/20 to-indigo-500/30 text-blue-400 border-blue-500/30",
-      accent: "border-blue-500/40",
+      color: "bg-blue-50 text-[#0071e3] border-blue-200",
+      accent: "border-blue-200",
     },
     {
       num: "02",
@@ -37,8 +37,8 @@ export function Process({ onOpenContact }: ProcessProps) {
       desc: "Hands-on guided labs and code scaffolding. Master the specific tech stacks, firmware libraries, cloud infrastructure, or ML pipelines required for your implementation.",
       icon: Wrench,
       milestone: "Technical Foundation & Tooling Ready",
-      color: "from-cyan-500/20 to-blue-500/30 text-cyan-400 border-cyan-500/30",
-      accent: "border-cyan-500/40",
+      color: "bg-cyan-50 text-[#0284c7] border-cyan-200",
+      accent: "border-cyan-200",
     },
     {
       num: "03",
@@ -47,8 +47,8 @@ export function Process({ onOpenContact }: ProcessProps) {
       desc: "Iterative hardware assembly, software development, data collection, and bug elimination. Benchmarked testing ensures the system works reliably in real-world conditions.",
       icon: Sparkles,
       milestone: "Functional Prototype & Test Verification",
-      color: "from-purple-500/20 to-indigo-500/30 text-purple-400 border-purple-500/30",
-      accent: "border-purple-500/40",
+      color: "bg-purple-50 text-purple-600 border-purple-200",
+      accent: "border-purple-200",
     },
     {
       num: "04",
@@ -57,78 +57,77 @@ export function Process({ onOpenContact }: ProcessProps) {
       desc: "Take your project to the world. Present at top conferences, file patent applications, ace placement interviews with proof-of-work, or incorporate your venture.",
       icon: Send,
       milestone: "Final Delivery, Paper/Patent & Career Launch",
-      color: "from-emerald-500/20 to-teal-500/30 text-emerald-400 border-emerald-500/30",
-      accent: "border-emerald-500/40",
+      color: "bg-emerald-50 text-emerald-600 border-emerald-200",
+      accent: "border-emerald-200",
     },
   ];
 
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative py-6 md:py-10 scroll-mt-24 overflow-hidden">
       {/* Background radial lighting */}
       <div
-        className="pointer-events-none absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full"
+        className="pointer-events-none absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[400px] bg-blue-500/5 blur-[120px] rounded-full"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-950/40 px-3.5 py-1 text-xs font-semibold text-indigo-300 backdrop-blur-md mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 eyebrow-badge mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
             <span>Structured Methodology</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1d1d1f] leading-tight">
             <span>From idea to </span>
-            <span className="bg-gradient-to-r from-indigo-300 via-indigo-100 to-cyan-300 bg-clip-text text-transparent">
+            <span className="text-highlight">
               outcome.
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg text-[#424245] leading-relaxed">
             A clear four-stage framework turning open problems into tangible proof-of-work and verified credentials.
           </p>
         </div>
 
         {/* Visual Progression Timeline */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 relative">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 relative">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="glass-panel group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/80 shadow-glass reflection-top"
+                className="glass-card group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 stagger-item"
               >
                 <div>
                   {/* Step Sequence Header */}
                   <div className="flex items-center justify-between mb-5">
-                    <span className="text-xs font-mono font-bold text-indigo-400 bg-indigo-950/60 border border-indigo-500/30 px-3 py-1 rounded-full">
+                    <span className="text-xs font-mono font-bold text-[#0071e3] bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
                       STEP {step.num}
                     </span>
                     <div
-                      className={`flex h-11 w-11 items-center justify-center rounded-2xl border bg-gradient-to-br shadow-sm transition-transform duration-200 group-hover:scale-105 ${step.color}`}
+                      className={`flex h-11 w-11 items-center justify-center rounded-2xl border shadow-sm transition-transform duration-200 group-hover:scale-105 ${step.color}`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Step Title & Tagline */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-indigo-200 transition-colors">
+                  <h3 className="text-xl font-bold text-[#1d1d1f]">
                     {step.name}
                   </h3>
-                  <div className="mt-1 text-xs font-semibold text-cyan-400">
+                  <div className="mt-1 text-xs font-semibold text-[#0071e3]">
                     {step.tagline}
                   </div>
 
-                  {/* Description */}
-                  <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-3 text-xs sm:text-sm text-[#424245] leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
                 {/* Milestone Badge */}
-                <div className="mt-6 pt-5 border-t border-slate-800">
-                  <div className="flex items-center gap-2 text-[11px] font-medium text-slate-300 bg-slate-950/60 p-2.5 rounded-xl border border-white/5">
-                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <div className="mt-6 pt-5 border-t border-black/[0.06]">
+                  <div className="flex items-center gap-2 text-[11px] font-medium text-[#424245] bg-[#f5f5f7] p-2.5 rounded-xl border border-black/[0.06]">
+                    <Check className="w-3.5 h-3.5 text-[#059669] shrink-0" />
                     <span className="line-clamp-1">{step.milestone}</span>
                   </div>
                 </div>
@@ -138,11 +137,11 @@ export function Process({ onOpenContact }: ProcessProps) {
         </div>
 
         {/* Quick Launch Banner */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <button
             onClick={() => onOpenContact("student")}
             type="button"
-            className="inline-flex items-center gap-2 rounded-xl bg-slate-900/80 border border-indigo-500/30 px-6 py-3 text-xs sm:text-sm font-semibold text-indigo-300 hover:bg-indigo-600 hover:text-white hover:border-indigo-400 transition-all active-press shadow-glow-indigo"
+            className="btn-primary px-6 py-3 text-xs sm:text-sm"
           >
             <span>Begin Step 01 Discovery Session</span>
             <ArrowRight className="w-4 h-4" />

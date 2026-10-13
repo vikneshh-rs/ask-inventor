@@ -181,12 +181,12 @@ export function OnboardingModal({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-[#080c14]/85 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-200"
         aria-hidden="true"
       />
 
       {/* Modal Surface Container */}
-      <div className="relative w-full max-w-2xl rounded-2xl border border-white/10 bg-[#0d1322] shadow-2xl overflow-hidden z-10 text-slate-100 animate-fade-in my-auto">
+      <div className="relative w-full max-w-2xl rounded-3xl border border-black/[0.08] bg-white shadow-2xl overflow-hidden z-10 text-[#1d1d1f] modal-enter my-auto">
         {/* Progress Header */}
         {step < 5 && (
           <ProgressHeader

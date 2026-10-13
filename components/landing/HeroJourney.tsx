@@ -39,8 +39,8 @@ export const ARCHITECTURAL_STAGES = [
       "Milestone breakdown & review preparation",
     ],
     outcomeTransformation: "Concept → Structured Technical Blueprint",
-    colorAccent: "text-blue-400 border-blue-500/40 bg-blue-950/20",
-    dotColor: "bg-blue-400",
+    colorAccent: "text-[#0071e3] border-blue-200 bg-blue-50/80",
+    dotColor: "bg-[#0071e3]",
   },
   {
     id: "skills",
@@ -60,8 +60,8 @@ export const ARCHITECTURAL_STAGES = [
       "Renewable energy & microgrid load profiling",
     ],
     outcomeTransformation: "Theory → Verified Digital Simulation",
-    colorAccent: "text-cyan-400 border-cyan-500/40 bg-cyan-950/20",
-    dotColor: "bg-cyan-400",
+    colorAccent: "text-[#0284c7] border-cyan-200 bg-cyan-50/80",
+    dotColor: "bg-[#0284c7]",
   },
   {
     id: "research",
@@ -81,8 +81,8 @@ export const ARCHITECTURAL_STAGES = [
       "Patent search, claims drafting & IP filing",
     ],
     outcomeTransformation: "Data → Peer-Reviewed IP Asset",
-    colorAccent: "text-purple-400 border-purple-500/40 bg-purple-950/20",
-    dotColor: "bg-purple-400",
+    colorAccent: "text-[#7c3aed] border-purple-200 bg-purple-50/80",
+    dotColor: "bg-[#7c3aed]",
   },
   {
     id: "prototype",
@@ -102,8 +102,8 @@ export const ARCHITECTURAL_STAGES = [
       "Full hardware integration & live demonstration",
     ],
     outcomeTransformation: "Schematic → Working Physical Hardware",
-    colorAccent: "text-emerald-400 border-emerald-500/40 bg-emerald-950/20",
-    dotColor: "bg-emerald-400",
+    colorAccent: "text-[#059669] border-emerald-200 bg-emerald-50/80",
+    dotColor: "bg-[#059669]",
   },
   {
     id: "career",
@@ -123,8 +123,8 @@ export const ARCHITECTURAL_STAGES = [
       "Core engineering resume & GitHub showcase",
     ],
     outcomeTransformation: "Project Artifacts → Core Industry Career",
-    colorAccent: "text-amber-400 border-amber-500/40 bg-amber-950/20",
-    dotColor: "bg-amber-400",
+    colorAccent: "text-[#d97706] border-amber-200 bg-amber-50/80",
+    dotColor: "bg-[#d97706]",
   },
   {
     id: "venture",
@@ -144,8 +144,8 @@ export const ARCHITECTURAL_STAGES = [
       "Technical pitch deck & prototype demo",
     ],
     outcomeTransformation: "Working Prototype → Scalable Venture",
-    colorAccent: "text-rose-400 border-rose-500/40 bg-rose-950/20",
-    dotColor: "bg-rose-400",
+    colorAccent: "text-[#4f46e5] border-indigo-200 bg-indigo-50/80",
+    dotColor: "bg-[#4f46e5]",
   },
 ];
 
@@ -161,19 +161,19 @@ export function HeroJourney({
   return (
     <div className={`relative w-full ${className}`}>
       {/* Blueprint Container */}
-      <div className="rounded-xl border border-white/10 bg-[#0d1322] shadow-2xl overflow-hidden">
+      <div className="rounded-2xl border border-black/[0.08] bg-white shadow-card overflow-hidden">
         {/* Top Control Bar with System Telemetry */}
-        <div className="flex flex-wrap items-center justify-between border-b border-white/10 bg-[#080c14] px-4 py-2.5 text-[11px] font-mono">
+        <div className="flex flex-wrap items-center justify-between border-b border-black/[0.08] bg-[#f5f5f7]/60 px-4 py-2.5 text-[11px] font-mono">
           <div className="flex items-center gap-2">
-            <Terminal className="w-3.5 h-3.5 text-indigo-400" />
-            <span className="text-slate-400">ASK_SYSTEM //</span>
-            <span className="text-slate-200 font-semibold">TRANSFORMATION_BLUEPRINT</span>
+            <Terminal className="w-3.5 h-3.5 text-[#0071e3]" />
+            <span className="text-[#86868b]">ASK_SYSTEM //</span>
+            <span className="text-[#1d1d1f] font-semibold">TRANSFORMATION_BLUEPRINT</span>
           </div>
 
-          <div className="flex items-center gap-3 text-slate-400">
+          <div className="flex items-center gap-3 text-[#6e6e73]">
             <div className="flex items-center gap-1.5">
               <span className={`h-2 w-2 rounded-full ${current.dotColor} animate-pulse`} />
-              <span className="text-slate-300 font-medium">{current.phaseTag}</span>
+              <span className="text-[#1d1d1f] font-medium">{current.phaseTag}</span>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ export function HeroJourney({
         <div
           role="tablist"
           aria-label="Transformation Stages"
-          className="grid grid-cols-3 sm:grid-cols-6 border-b border-white/10 bg-[#0a0f1d]"
+          className="grid grid-cols-3 sm:grid-cols-6 border-b border-black/[0.08] bg-[#f5f5f7]"
         >
           {ARCHITECTURAL_STAGES.map((stage, idx) => {
             const isSelected = activeStageIndex === idx;
@@ -193,16 +193,16 @@ export function HeroJourney({
                 aria-selected={isSelected}
                 onClick={() => setActiveStageIndex(idx)}
                 type="button"
-                className={`group relative flex flex-col items-start px-3.5 py-3 text-left transition-all border-r border-white/5 last:border-r-0 active-press ${
+                className={`group relative flex flex-col items-start px-3.5 py-3 text-left transition-all border-r border-black/[0.06] last:border-r-0 active-press ${
                   isSelected
-                    ? "bg-[#0d1322] text-white"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-white/[0.02]"
+                    ? "bg-white text-[#1d1d1f] shadow-sm font-semibold"
+                    : "text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.02]"
                 }`}
               >
                 <div className="flex items-center justify-between w-full mb-1">
                   <span
                     className={`font-mono text-[10px] font-bold ${
-                      isSelected ? "text-indigo-400" : "text-slate-400"
+                      isSelected ? "text-[#0071e3]" : "text-[#86868b]"
                     }`}
                   >
                     {stage.num}
@@ -219,7 +219,7 @@ export function HeroJourney({
 
                 {/* Active Indicator Top Line */}
                 {isSelected && (
-                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-indigo-500" />
+                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#0071e3]" />
                 )}
               </button>
             );
@@ -227,34 +227,34 @@ export function HeroJourney({
         </div>
 
         {/* Active Stage Blueprint Viewport */}
-        <div className="p-5 sm:p-7 bg-[#0d1322] bg-blueprint-grid">
+        <div className="p-5 sm:p-7 bg-white">
           {/* Header Row: Stage Name + Transformation Vector */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-white/10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-black/[0.06]">
             <div className="flex items-start gap-3.5">
               <div
-                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border ${current.colorAccent}`}
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${current.colorAccent}`}
               >
                 <StageIcon className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-[11px] font-bold text-slate-400">
+                  <span className="font-mono text-[11px] font-bold text-[#86868b]">
                     STAGE {current.num}
                   </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="font-mono text-[11px] text-indigo-300">
+                  <span className="text-[#aeaeb2]">•</span>
+                  <span className="font-mono text-[11px] text-[#0071e3] font-semibold">
                     {current.phaseTag}
                   </span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-extrabold text-white mt-0.5">
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#1d1d1f] mt-0.5">
                   {current.title}
                 </h3>
               </div>
             </div>
 
             {/* Transformation Vector Tag */}
-            <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#080c14] px-3.5 py-2 text-xs font-mono text-slate-300">
-              <Activity className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <div className="inline-flex items-center gap-2 rounded-xl border border-black/[0.08] bg-[#f5f5f7] px-3.5 py-2 text-xs font-mono text-[#1d1d1f]">
+              <Activity className="w-3.5 h-3.5 text-[#0071e3] shrink-0" />
               <span>{current.outcomeTransformation}</span>
             </div>
           </div>
@@ -264,33 +264,33 @@ export function HeroJourney({
             {/* Left Context: Description & Toolchains */}
             <div className="lg:col-span-6 space-y-4">
               <div>
-                <div className="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5 text-indigo-400" />
+                <div className="font-mono text-[11px] uppercase tracking-wider text-[#86868b] mb-1.5 flex items-center gap-1.5">
+                  <Compass className="w-3.5 h-3.5 text-[#0071e3]" />
                   <span>Engineering Scope</span>
                 </div>
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-[#424245] leading-relaxed">
                   {current.description}
                 </p>
               </div>
 
               <div>
-                <div className="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">
+                <div className="font-mono text-[11px] uppercase tracking-wider text-[#86868b] mb-2">
                   Input State
                 </div>
-                <div className="rounded-lg border border-white/5 bg-[#080c14]/80 px-3 py-2 font-mono text-xs text-slate-300">
+                <div className="rounded-xl border border-black/[0.06] bg-[#f5f5f7] px-3 py-2 font-mono text-xs text-[#424245]">
                   {current.inputState}
                 </div>
               </div>
 
               <div>
-                <div className="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">
+                <div className="font-mono text-[11px] uppercase tracking-wider text-[#86868b] mb-2">
                   Applied Toolchains & Methods
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {current.toolchain.map((tool) => (
                     <span
                       key={tool}
-                      className="rounded border border-white/10 bg-[#080c14] px-2.5 py-1 font-mono text-[11px] text-slate-200"
+                      className="rounded-lg border border-black/[0.08] bg-[#f5f5f7] px-2.5 py-1 font-mono text-[11px] text-[#1d1d1f]"
                     >
                       {tool}
                     </span>
@@ -300,13 +300,13 @@ export function HeroJourney({
             </div>
 
             {/* Right Context: Deliverables & Action */}
-            <div className="lg:col-span-6 flex flex-col justify-between rounded-lg border border-white/10 bg-[#080c14]/60 p-4 sm:p-5">
+            <div className="lg:col-span-6 flex flex-col justify-between rounded-xl border border-black/[0.06] bg-[#f5f5f7]/70 p-4 sm:p-5">
               <div>
-                <div className="flex items-center justify-between pb-2 border-b border-white/10 mb-3">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400">
+                <div className="flex items-center justify-between pb-2 border-b border-black/[0.06] mb-3">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#86868b]">
                     Engineered Deliverables
                   </span>
-                  <span className="font-mono text-[11px] text-emerald-400">
+                  <span className="font-mono text-[11px] text-emerald-600 font-semibold">
                     Verified Outputs
                   </span>
                 </div>
@@ -315,28 +315,30 @@ export function HeroJourney({
                   {current.deliverables.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2.5 text-xs text-slate-300"
+                      className="flex items-start gap-2.5 text-xs text-[#424245]"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <span className="leading-snug">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-5 pt-4 border-t border-black/[0.06] flex flex-col gap-2">
                 <button
                   type="button"
                   onClick={() => onOpenContact("student", `blueprint-stage-${current.id}`)}
-                  className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-500 transition-colors active-press"
+                  className="btn-primary w-full h-10 px-4 text-xs sm:text-sm font-semibold justify-center gap-2 shadow-sm"
                 >
                   <span>Consult Mentors on Phase {current.num}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <span className="font-mono text-[10px] text-slate-400 hidden sm:inline-block">
-                  PHASE // 0{activeStageIndex + 1} OF 06
-                </span>
+                <div className="flex items-center justify-center">
+                  <span className="font-mono text-[10px] text-[#86868b]">
+                    PHASE // 0{activeStageIndex + 1} OF 06
+                  </span>
+                </div>
               </div>
             </div>
           </div>
