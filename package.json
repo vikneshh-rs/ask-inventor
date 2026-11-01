@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sync:demo": "node -e \"const fs = require('fs'); if (fs.existsSync('AskInventors_UI_Demo.html')) { fs.copyFileSync('AskInventors_UI_Demo.html', 'public/AskInventors_UI_Demo.html'); fs.copyFileSync('AskInventors_UI_Demo.html', 'public/index.html'); console.log('✓ AskInventors_UI_Demo.html synced to public/'); }\"",
+    "predev": "npm run sync:demo",
+    "prebuild": "npm run sync:demo",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

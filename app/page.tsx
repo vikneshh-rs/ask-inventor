@@ -1,77 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
-import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
-import { CoreIdea } from "@/components/landing/CoreIdea";
-import { Journey } from "@/components/landing/Journey";
-import { Audience } from "@/components/landing/Audience";
-import { Services } from "@/components/landing/Services";
-import { Process } from "@/components/landing/Process";
-import { InnovationShowcase } from "@/components/landing/InnovationShowcase";
-import { Knowledge } from "@/components/landing/Knowledge";
-import { FinalCTA } from "@/components/landing/FinalCTA";
-import { Footer } from "@/components/landing/Footer";
-import { OnboardingModal } from "@/components/onboarding/OnboardingModal";
-import { UserRole } from "@/types/onboarding";
+import React from "react";
 
-export default function LandingPage() {
-  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
-  const [onboardingRole, setOnboardingRole] = useState<UserRole>("student");
-
-  const handleOpenOnboarding = (role = "student") => {
-    setOnboardingRole((role === "mentor" ? "mentor" : "student") as UserRole);
-    setIsOnboardingOpen(true);
-  };
-
-  const handleCloseOnboarding = () => {
-    setIsOnboardingOpen(false);
-  };
-
+export default function Home() {
   return (
-    <div className="relative min-h-screen bg-grid text-[#1d1d1f] selection:bg-blue-100 selection:text-blue-800">
-      {/* 01: Minimalist Editorial Navbar */}
-      <Navbar onOpenContact={handleOpenOnboarding} />
-
-      {/* Main Content Sections */}
-      <main id="main-content" className="relative">
-        {/* 02: Architectural Hero Section */}
-        <Hero onOpenContact={handleOpenOnboarding} />
-
-        {/* 03: The Core Idea */}
-        <CoreIdea onOpenContact={handleOpenOnboarding} />
-
-        {/* 04: The ASK INVENTORS Journey */}
-        <Journey onOpenContact={handleOpenOnboarding} />
-
-        {/* 05: Who We Serve */}
-        <Audience onOpenContact={handleOpenOnboarding} />
-
-        {/* 06: Our Services */}
-        <Services onOpenContact={handleOpenOnboarding} />
-
-        {/* 07: How It Works */}
-        <Process onOpenContact={handleOpenOnboarding} />
-
-        {/* 08: Innovation Showcase */}
-        <InnovationShowcase onOpenContact={handleOpenOnboarding} />
-
-        {/* 09: Knowledge + Community */}
-        <Knowledge onOpenContact={handleOpenOnboarding} />
-
-        {/* 10: Final CTA */}
-        <FinalCTA onOpenContact={handleOpenOnboarding} />
-      </main>
-
-      {/* 11: Footer */}
-      <Footer onOpenContact={handleOpenOnboarding} />
-
-      {/* Role-Based Progressive Account Onboarding Experience */}
-      <OnboardingModal
-        isOpen={isOnboardingOpen}
-        onClose={handleCloseOnboarding}
-        initialRole={onboardingRole}
+    <main className="fixed inset-0 w-screen h-screen overflow-hidden bg-[#f4f7fc]">
+      <iframe
+        src="/AskInventors_UI_Demo.html"
+        title="ASK INVENTORS — Interactive UI Demo"
+        className="w-full h-full border-0 m-0 p-0 block"
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+          margin: 0,
+          padding: 0,
+        }}
       />
-    </div>
+    </main>
   );
 }
